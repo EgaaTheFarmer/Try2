@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Link -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- End Link -->
+  
+    <title>Bootstrap Example</title>
+
+      <!-- Start CSS  -->
+
+        <style>
+
+
+          /* Full width navbar */
+          .navbar {
+            padding: 0;
+            margin-top: -16px;
+          }
+
+          /* Universal Code */
+            /* Start Atur animasi dan posisi awal */
+                .animate-on-scroll {
+                        opacity: 0;
+                        transform: translateY(50px);
+                        transition: opacity 2s ease-out, transform 2s ease-out;
+                }
+                .animate-visible {
+                        opacity: 1;
+                        transform: translateY(0);
+                }
+            /* End Atur animasi dan posisi awal */
+
+            /* Start Universal Button */
+                .btn {
+                        background-color:var(--button-bg); /* Change Background Button Color */
+                        color: var(--text-bg); /* Change Text Color */
+                        font-size: 18px;
+                        font-weight: 300;
+                        border: none; /* Remove Button */
+                        border-radius: 15px;
+                        margin: 2%;
+                    }
+
+                .btn:hover {
+                background-color: var(--button-hover-bg);
+                color: var(--button-text);
+                }
+            /* End Universal Button */
+
+        /* Variabel Tema */
+          :root {
+               /* Tema Light - optimal untuk tempat terang */
+               --bg-color: #f9f9f9;         /* Warna latar belakang terang */
+               --bg-color-card: #6d8885;         /* Warna latar belakang terang */
+               --text-color: #fff8f8;       /* Warna teks gelap untuk kontras */
+               --text-color-card: #21232b; /* Warna latar belakang terang (card)  */
+               --text-color-footer: #0098b3;       /* Warna teks gelap untuk kontras */
+               --text-color-content-3: #0098b3;       /* Warna teks gelap untuk kontras */
+               --navbar-bg: #9ca2a8;        /* Warna latar navbar terang */
+               --navbar-text: #333333;      /* Warna teks navbar gelap */
+               --button-bg: #0098b3;        /* Warna latar belakang tombol biru cerah */
+               --button-text: #ffffff;      /* Warna teks tombol putih */
+               --button-hover-bg: #0098b3;  /* Warna tombol saat di-hover */
+               --shadow-color: rgba(0, 0, 0, 0.1); /* Bayangan ringan untuk elemen */
+           }
+   
+           [data-theme="dark"] {
+               /* Tema Dark - optimal untuk tempat gelap */
+               --bg-color: #1e1e1e;         /* Warna latar belakang gelap */
+               --bg-color-card: #203335;         /* Warna latar belakang gelap */
+               --text-color: #2d87ae;       /* Warna teks terang untuk kontras */
+               --text-color-card: #cccccc; /* Warna latar belakang terang (card)  */
+               --text-color-footer: #cccccc; /* Warna latar belakang terang (card)  */
+               --text-color-content-3: #2d87ae;       /* Warna teks terang untuk kontras */
+               --navbar-bg: #2a2a2a;        /* Warna latar navbar gelap */
+               --navbar-text: #cccccc;      /* Warna teks navbar terang */
+               --button-bg: #444444;        /* Warna latar tombol abu-abu gelap */
+               --button-text: #e0e0e0;      /* Warna teks tombol terang */
+               --button-hover-bg: #555555;  /* Warna tombol saat di-hover */
+               --shadow-color: rgba(0, 0, 0, 0.2); /* Bayangan lebih tebal */
+           }
+        /* End Variabel Tema */
+                
+
+          /* Styling With Variabel */
+          body, html{
+               background-color: var(--bg-color);
+               color: var(--text-color);
+               margin-left: -16px;
+               margin-right: -16px;
+           } 
+   
+        /* Custom navbar */
+           .container-fluid {
+             background-color: var(--navbar-bg); 
+           }
+           
+           .container-fluid .nav-link {
+             color: var(--text-color) !important; 
+             font-size: 18px;
+             font-weight: 300;
+             margin-left: 4%;
+           }
+       
+           .container-fluid .navbar-brand {
+             color: var(--text-color) !important; 
+             font-weight: 200;
+             font-size: 25px !important; 
+             font-style: italic;
+             margin-left: 2%;
+           }
+       
+           /* Change color when hovering over links */
+           .container-fluid .nav-link:hover {
+             color: cadetblue !important; 
+           }
+   
+           /* Align button with text */
+           .container-fluid .navbar-nav li {
+               display: flex; 
+               align-items: center; /* Aligns button vertically with text */
+           }
+   
+           /* Change button background and text color */
+           .container-fluid .btn {
+               font-size: 18px;
+               font-weight: 300;
+               border-radius: 15px;
+               margin: 2%;
+           }
+  
+        /* End Custom Navbar */
+
+
+        /* Custom Content Satu */
+
+           /* Change Font Size and Weight h1 */
+            .content-1 .text h1 {
+               margin-top: 10%;
+               font-weight: 200;
+               color: var(--text-color);
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Menambahkan bayangan teks */
+               
+           }
+           /* Change Font Size and Weight p1 */
+            .content-1 .text p1 {
+               margin-left: 10%;
+               font-weight: 200;
+               color: var(--text-color); /* Change Color Text p1*/
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan teks */
+           }
+   
+           /* Change Font Size and Weight p */
+            .content-1 .text p {
+               margin-left: 10%;
+               margin-right: 10%;
+               margin-top: 2%; /* Change Margin Top p*/
+               font-weight: 300;
+               color: var(--text-color);
+               margin-bottom: 2%; /* Change Margin Bottom p*/
+               text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* Menambahkan bayangan teks */
+           }
+        /* End Custom Content Satu*/
+
+
+        /* Start Custom Content Dua */
+        
+            .content-2 .carousel-inner {
+              margin-top: 4%;
+              margin-bottom: 2%;
+            }
+
+            .content-2 .carousel {
+                margin-left: 2%;
+                margin-right: 2%;
+            }
+
+            .content-2 h1 {
+                font-weight: 200;
+                color: var(--text-color-content-3);
+                margin-bottom: 3%;
+            }
+
+            .content-2 p {
+                font-weight: 200;
+                color: var(--text-color-content-3);
+                margin-bottom: 2%;
+            }
+            
+            .content-2 .card {
+              background-color: var(--bg-color-card);  
+            }
+
+            .content-2 .card p {
+              color: var(--text-color-card);
+            }
+
+            .content-2 .card h5 {
+              color: var(--text-color-card);
+            }
+        /* End Custom Content Dua */
+
+
+        /* Start Content Tiga */
+            .content-3 h1 {
+              color: var(--text-color-content-3);
+              margin-top: 4%;
+              margin-left: 3%;
+              font-weight: 200;
+            }
+            .content-3 h5 {
+              color: var(--text-color-content-3);
+              font-weight: 200;
+            }
+            .content-3 p {
+              color: var(--text-color-content-3);
+              margin-top: 1%;
+              margin-left: 3%;
+              margin-bottom: 3%;
+              font-weight: 200;
+            }
+
+            .content-3 .card {
+              margin-left: 3%;
+            }
+
+            .content-3 .form-label {
+              color: var(--text-color-content-3);
+            }
+
+            .content-3 .mb-3 {
+              margin-right: 3%;
+            }
+        /* End Content Tiga */  
+
+        /* Start Content Empat */
+
+            
+            .content-4 h1 {
+                color: var(--text-color-content-3);
+                margin-top: 4%;
+                margin-left: 3%;
+                font-weight: 200;
+            }
+            .content-4  h2, h4, p {
+                color: var(--text-color-content-3);
+                font-weight: 200;
+            }
+
+            .content-4 p {
+                margin-top: 1%;
+                margin-left: 3%;
+                margin-bottom: 3%;
+            }
+
+        /* End Content Empat */
+
+        /* Start Content Lima */
+            .content-5 h2,
+            .content-5 p,
+            .content-5 h5 {
+                color: var(--text-color-content-3);
+                font-weight: 200;
+            }
+            
+
+            #contactSection {
+                background-color: var(--bg-color);
+                border-radius: 8px;
+            }
+
+            #contactForm input, #contactForm textarea {
+                border-radius: 5px;
+                border: 1px solid #ced4da;
+            }
+
+            #contactForm input:focus, #contactForm textarea:focus {
+                border-color: #2d87ae;
+                box-shadow: 0 0 4px rgba(45, 135, 174, 0.2);
+            }
+
+            
+        /* End Content Lima */
+
+
+
+
+
+            
+        /* Start Custom Footer */
+            
+            .footer p, h5 {
+                color: var(--text-color-footer);
+            }
+            
+            .footer .social-icon {
+                transition: transform 0.3s;
+                color: var(--text-color-footer);
+          }
+            .footer .social-icon:hover {
+                transform: scale(1.2);
+          }
+
+          /* Start Wave Animation */
+            .footer .wave-container {
+                overflow: hidden;
+                height: 120px; /* Tambahkan ketinggian sedikit untuk ombak tambahan */
+                pointer-events: none;
+                z-index: 3;
+            }
+            .footer .wave {
+                position: absolute;
+                bottom: 0;
+                width: 200%;
+                height: 120px;
+                animation: waveAnimation 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            }
+            .footer .wave1 {
+                animation-duration: 7s;
+                animation-delay: 0s;
+                opacity: 0.8;
+            }
+            .footer .wave2 {
+                animation-duration: 9s;
+                animation-delay: -1s;
+                opacity: 0.7;
+            }
+            .footer .wave3 {
+                animation-duration: 11s;
+                animation-delay: -2s;
+                opacity: 0.6;
+                bottom: -10px; /* Naikkan sedikit untuk tampilan lebih tinggi */
+            }
+            .footer .wave4 {
+                animation-duration: 13s;
+                animation-delay: -3s;
+                opacity: 0.5;
+                bottom: -20px; /* Naikkan sedikit untuk tampilan lebih tinggi */
+            }
+            .footer .wave5 {
+                animation-duration: 15s;
+                animation-delay: -4s;
+                opacity: 0.4;
+                bottom: -30px; /* Naikkan lagi */
+            }
+
+            @keyframes waveAnimation {
+                0% { transform: translate3d(0, 0, 0); }
+                50% { transform: translate3d(-25%, 0, 0); }
+                100% { transform: translate3d(0, 0, 0); }
+            }
+          /* End Custom Wave Animation */
+          
+        /* End Custom Footer */
+
+
+        
+
+        </style>
+      <!-- End CSS -->
+
+  </head>
+<!-- Start Body -->
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+
+        <!-- Start Navbar -->
+            <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Welcome - Lifestyle Vibes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <!-- Tambahkan kelas ms-auto pada ul untuk menggeser elemen ke kanan -->
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contactSection">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#subscribeSection" class="btn btn-primary">Subscribe</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary" onclick="toggleTheme()" id="themeToggleIcon">
+                    <i class="bi bi-lightbulb-fill"></i>
+                    </button>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+
+        <!-- Start Content Satu -->
+        <div class="content-1">
+                        <!-- Start Gambar Satu -->
+            <div class="position-relative text-center">
+                    <!-- Gambar dengan ukuran penuh -->
+                    <img src="/Image/photo4.jpeg" class="img-fluid w-100" alt="Gambar Satu">
+                    <div class="text">
+                        <!-- Teks di atas gambar -->
+                        <div class="position-absolute top-50 start-50 translate-middle text-white px-3 px-md-5">
+                            <h1 class="display-4 display-md-2 text-uppercase">Welcome to the Lifestyle Hub</h1>
+                            <p class="lead d-none d-md-block">Explore Trends, Wellness, and Living your best life</p>
+                            <p class="fs-5 d-none d-lg-block">
+                                Lifestyle is all about finding balance, embracing health, and living in the moment. Whether you're into fitness, mindfulness, or just looking to elevate your daily routines, you've come to the right place.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Gambar Satu -->
+        </div>
+        <!-- End Content Satu -->
+
+
+        <!-- Start Content Dua -->
+         <div class="content-2">
+           
+            <!-- Start Carousel Satu -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner">
+                    <h1>Travelling</h1>
+                    <p>Travel opens doors to new cultures, breathtaking landscapes, and memorable adventures. From serene natural escapes to bustling urban experiences, travelling offers a chance to unwind, learn, and connect with the world in unique ways. Whether you're seeking a peaceful retreat, a thrilling adventure, or a cultural immersion, exploring new places enriches life, broadens perspectives, and creates unforgettable memories.</p>
+
+                    <!-- Start Carousel 1 with Cards -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-around">
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo22.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo23.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo24.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Carousel 1 with Cards -->
+                    
+                    <!-- Start Carousel 2 with Cards -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo25.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo26.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo27.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Carousel 2 with Cards -->
+                
+                    <!-- Start Carousel 3 with Cards -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo30.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo28.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="/Image/photo29.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <!-- End Carousel 3 with Cards -->
+                </div>
+  
+                <!-- Start Carousel controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <!-- End Carousel controls -->
+
+              </div>
+            <!-- End Carousel Satu --> 
+
+        <!-- Start Carousel Dua -->
+            <div class="text-center py-5">
+            <h1>Working</h1>
+            <p class="mb-4">Travel opens doors to new cultures, breathtaking landscapes, and memorable adventures...</p>
+
+            <!-- Start Carousel 1 with Cards -->
+                <div class="d-flex justify-content-center">
+                    <div class="row row-cols-1 row-cols-md-2 g-4 w-100">
+                        <div class="col">
+                            <div class="card h-100 w-100">
+                                <img src="/Image/photo1.avif" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Convenient place</h5>
+                                    <p class="card-text">Work in a space that nurtures your comfort and inspires your passion, for it is from a happy heart that the greatest productivity flows. When your surroundings energize you, your creativity and drive naturally reach their peak.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 8 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 w-100">
+                                <img src="/Image/photo32.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rest</h5>
+                                    <p class="card-text">Remember, taking a break in the midst of work isn’t a setback but rather a strategy to recharge. Pausing allows you to return with renewed energy and focus, ensuring that each effort is more deliberate and effective.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated 23 hour ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- End Carousel 1 with Cards -->
+        </div>
+        <!-- End Carousel Dua -->
+         </div>
+        <!-- End Content Dua -->
+
+        <!-- Start Content Tiga -->
+        <div class="content-3">
+          <h1>Latest in Wellness</h1>
+          <p>Discover the latest trends in wellness, from meditation techniques to fitness tips that keep you grounded and healthy.</p>
+
+          <div class="row">
+              <!-- Card Container -->
+                  <div class="col-md-6">
+                  <!-- Card 1 -->
+                  <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                          <div class="col-md-4">
+                              <img src="/Image/photo5.jpeg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                              <div class="card-body">
+                                  <h5 class="card-title">Meditation</h5>
+                                  <p class="card-text">Meditation is a mindfulness practice that helps calm the mind, and reduce stress. By encouraging relaxation and self-awareness, meditation supports mental clarity and emotional well-being. Regular practice can improve concentration, and reduce anxiety.</p>
+                                  <p class="card-text"><small class="text-body-secondary">Last updated 1 day ago</small></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Card 1 -->
+
+                  <!-- Card 2 -->
+                  <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                          <div class="col-md-4">
+                              <img src="/Image/photo6.jpeg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                              <div class="card-body">
+                                  <h5 class="card-title">Fresh Food</h5>
+                                  <p class="card-text">Fresh food, including fruits, vegetables, and unprocessed ingredients, provides essential nutrients and is key to a balanced diet. Consuming fresh food promotes better health, supports the immune system, and can enhance energy levels, offering a natural, flavorful approach to wellness.</p>
+                                  <p class="card-text"><small class="text-body-secondary">Last updated 20 min ago</small></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Card 2 -->
+                </div>
+              <!-- End Card Container -->
+
+              <!-- Start Calculator -->
+                 <div class="col-md-6">
+                <div class="container"> 
+                    <h5 class="text-center">Daily Calorie Needs Calculator</h5>
+                    <form id="calorieForm">
+                        <div class="mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select id="gender" class="form-select" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="age" class="form-label">Age (year)</label>
+                            <input type="number" id="age" class="form-control" placeholder="Enter your age" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">Weight (kg)</label>
+                            <input type="number" id="weight" class="form-control" placeholder="Enter your weight" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="height" class="form-label">Height (cm)</label>
+                            <input type="number" id="height" class="form-control" placeholder="Enter yout height" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="activityLevel" class="form-label">Activity Level</label>
+                            <select id="activityLevel" class="form-select" required>
+                                <option value="">Choose How Often to Exercise</option>
+                                <option value="1.2">Sedentary (inactive)</option>
+                                <option value="1.375">Light (light exercise 1-3 days/week)</option>
+                                <option value="1.55">Moderate (moderate exercise 3-5 days/week)</option>
+                                <option value="1.725">High (vigorous exercise 6-7 days/week)</option>
+                                <option value="1.9">Very High (hard physical work or training twice a day)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate Calorie Needs</button>
+                    </form>
+                    <h5 class="mt-4" id="result"></h5>
+                    <h5 class="mt-2" id="bmiResult"></h5>
+                </div>
+                </div>
+              <!-- End Calculator -->
+          </div>
+         </div>
+        <!-- End Content Tiga -->
+
+        <!-- Start Content Empat -->
+         <div class="content-4">
+            
+        <div class="hero-section text-center text-light p-5 mb-5" style="background-image: url('/Image/photo11.jpeg'); background-size: cover; background-attachment: fixed;">
+            <h1 class="display-4 animate-on-scroll">Stay Ahead in Fashion</h1>
+            <p class="lead animate-on-scroll">Explore the latest trends, styles, and sustainable tips</p>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-12 my-5">
+                <h1 class="animate-on-scroll">Explore Fashion & Trends</h1>
+                <h2 class="animate-on-scroll">
+                    Stay Ahead in Fashion
+                </h2>
+                <p class="animate-on-scroll">
+                    Fashion is an ever-evolving expression of individuality and style, influenced by global trends, cultural shifts, and technological advancements. Staying ahead in fashion requires insight into what's trending—from seasonal colors and popular fabrics to iconic silhouettes.
+                </p>
+                <h2 class="animate-on-scroll">
+                    Embracing Sustainable Fashion
+                </h2>
+                <p class="animate-on-scroll">
+                    With a growing awareness of environmental impacts, sustainable fashion is reshaping the industry. Choosing eco-friendly materials, supporting ethical brands, and adopting minimalist wardrobes are all steps toward a greener future in fashion.
+                </p>
+                <h2 class="animate-on-scroll">
+                    Our Purpose
+                </h2>
+                <p class="animate-on-scroll">
+                    This platform offers guidance on discovering your style, learning sustainable practices, and understanding fashion’s impact. We aim to empower individuals to make informed choices that reflect their style and values.
+                </p>
+              </div>
+            </div>
+        </div> 
+          <div class="container my-5">
+            <div class="row">
+              <div class="col-md-4 mb-3 animate-on-scroll">
+                <div class="card">
+                  <img src="/Image/photo7.jpeg" class="card-img-top" alt="Pastel Colors">
+                  <div class="card-body">
+                    <h5 class="card-title">Pastel Colors</h5>
+                    <p class="card-text">Pastel colors, soft and muted, are timeless in fashion for their lightness and versatility. Shades like baby blue, soft pink, lavender, mint green, and peach create a calming, approachable aesthetic. They blend well with a wide range of outfits, from chic streetwear to formal attire. Popular in spring and summer, pastels pair effortlessly with neutrals for a balanced look or can be layered with darker hues for a stylish contrast. Pastels remain a staple for anyone seeking subtle elegance.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3 animate-on-scroll">
+                <div class="card">
+                  <img src="/Image/photo8.jpeg" class="card-img-top" alt="Sustainable Materials">
+                  <div class="card-body">
+                    <h5 class="card-title">Sustainable Materials</h5>
+                    <p class="card-text">Sustainable materials have become essential in eco-conscious fashion, emphasizing the use of responsibly sourced and biodegradable fabrics. These include organic cotton, hemp, bamboo, and Tencel, derived from renewable resources and produced with minimal environmental impact. Sustainable materials also encompass recycled fabrics like polyester from plastic waste. The goal is to create lasting, low-impact garments that promote ethical and environmentally friendly practices, helping consumers reduce their carbon footprint and support a more responsible fashion industry.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3 animate-on-scroll">
+                <div class="card">
+                  <img src="/Image/photo9.jpeg" class="card-img-top" alt="Bohemian Style">
+                  <div class="card-body">
+                    <h5 class="card-title">Bohemian Style</h5>
+                    <p class="card-text">Bohemian, or “boho,” style draws inspiration from the free-spirited lifestyle and artistic expression, often incorporating earthy tones, loose silhouettes, and handcrafted elements. It favors natural fabrics like cotton and linen, layering, and eclectic patterns like florals, paisley, and tribal designs. Accessories such as fringed bags, oversized hats, and beaded jewelry add to the boho look. Rooted in 1960s and 1970s counter-culture, bohemian style celebrates individuality and a relaxed, creative lifestyle, making it a favorite for those drawn to timeless, laid-back fashion.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="fashionCarousel" class="carousel slide my-5 animate-on-scroll" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/Image/photo17.jpg" class="d-block w-100" alt="Icon 1">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Fashion Direrction 1</h5>
+                  <p>A woman who is waiting for night to come.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Image/photo18.jpg" class="d-block w-100" alt="Icon 2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Fashion Direrction 2</h5>
+                  <p>The man resembles a mafia boss.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Image/photo19.jpg" class="d-block w-100" alt="Icon 2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Fashion Direrction 3</h5>
+                  <p>The woman resembled a wolf in the fur of the night sky.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Image/photo20.jpg" class="d-block w-100" alt="Icon 2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Fashion Direrction 4</h5>
+                  <p>Mothers are shopping a lot.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Image/photo21.jpg" class="d-block w-100" alt="Icon 2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Fashion Direrction 5</h5>
+                  <p>At a fashion show in Paris.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#fashionCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#fashionCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+          <div class="container my-5">
+            <h3 class="text-center mb-4">Sustainable Fashion Stats</h3>
+            <div class="progress animate-on-scroll">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Organic Materials</div>
+            </div>
+            <div class="progress animate-on-scroll mt-2">
+              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50% Recycled Fabrics</div>
+            </div>
+          </div>
+          
+          <div class="quote-section text-light text-center py-5 animate-on-scroll" style="background-image: url('/Image/photo11.jpeg'); background-size: cover;">
+            <blockquote class="blockquote">
+              <p class="mb-0">"Fashion is the armor to survive the reality of everyday life."</p>
+            </blockquote>
+          </div>
+          
+          <div id="subscribeSection" class="container text-center my-5">
+            <h4 class="animate-on-scroll">Stay Updated on Trends</h4>
+            <p class="animate-on-scroll">Subscribe to our newsletter for weekly updates on the latest news.</p>
+            <form id="subscribeForm" class="row g-3 justify-content-center animate-on-scroll">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="gender" required>
+                        <option value="" disabled selected>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" class="form-control" id="age" placeholder="Age" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="from" placeholder="From (Country)" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary" onclick="showModal()">Subscribe</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Start Modal -->
+        <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="subscribeModalLabel">Subscription Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>First Name:</strong> <span id="modalFirstName"></span></p>
+                        <p><strong>Last Name:</strong> <span id="modalLastName"></span></p>
+                        <p><strong>Gender:</strong> <span id="modalGender"></span></p>
+                        <p><strong>Age:</strong> <span id="modalAge"></span></p>
+                        <p><strong>From:</strong> <span id="modalFrom"></span></p>
+                        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="submitSubscription()">Confirm Subscription</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+        
+
+
+
+        <!-- Example Code -->
+            
+
+         </div>
+        <!-- End Content Empat  -->
+
+        <!-- Start Content Lima -->
+            <div class="content-5">
+
+                <!-- Start Contact -->
+                <div id="contactSection" class="container py-5 my-5">
+                    <div class="text-center mb-4">
+                        <h2 class="animate-on-scroll">Get in Touch</h2>
+                        <p class="animate-on-scroll">We'd love to hear from you! Whether you have questions, feedback, or just want to say hi, reach out to us.</p>
+                    </div>
+                    
+                    <div class="row">
+                        <!-- Contact Info Section -->
+                        <div class="col-md-5 animate-on-scroll">
+                            <h4 class="mb-3">Contact Information</h4>
+                            <p><i class="bi bi-envelope"></i> Email: <a href="mailto:info@lifestylevibes.com">info@lifestylevibes.com</a></p>
+                            <p><i class="bi bi-telephone"></i> Phone: +123-456-7890</p>
+                            <p><i class="bi bi-geo-alt"></i> Address: 123 Lifestyle Street, Suite 45, Fashion City, Country</p>
+                            <p><i class="bi bi-clock"></i> Business Hours: Mon - Fri, 9 AM - 5 PM</p>
+                            
+                        </div>
+                
+                        <!-- Contact Form Section -->
+                        <div class="col-md-7 animate-on-scroll">
+                            <h4 class="mb-3">Send Us a Message</h4>
+                            <form id="contactForm" class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" id="message" placeholder="Your Message" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary w-50">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Contact -->
+
+
+                <!-- Start About -->
+                <section id="about" class="about py-5 bg-light animate-on-scroll">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8 text-center animate-on-scroll">
+                                <h2 class="display-6 fw-bold mb-4">About Us</h2>
+                                <p class="lead text-muted mb-4">
+                                    Welcome to <strong>Your Lifestyle Hub</strong> - your destination for everything on modern living, wellness, and style. Our mission is to inspire a balanced lifestyle by curating content on work, health, fashion, and mindful eating habits.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row text-center mt-5">
+                            <!-- Vision Section -->
+                            <div class="col-md-4 animate-on-scroll">
+                                <div class="mb-4">
+                                    <i class="fas fa-eye fa-3x text-secondary"></i>
+                                </div>
+                                <h5 class="fw-bold">Our Vision</h5>
+                                <p class="text-muted">
+                                    To be the most trusted source for those seeking a fulfilling and balanced lifestyle, guiding you to make conscious choices every day.
+                                </p>
+                            </div>
+
+                            <!-- Mission Section -->
+                            <div class="col-md-4 animate-on-scroll">
+                                <div class="mb-4">
+                                    <i class="fas fa-bullseye fa-3x text-secondary"></i>
+                                </div>
+                                <h5 class="fw-bold">Our Mission</h5>
+                                <p class="text-muted">
+                                    To empower individuals to live their best lives by providing insightful articles, expert tips, and lifestyle inspiration.
+                                </p>
+                            </div>
+
+                            <!-- Values Section -->
+                            <div class="col-md-4 animate-on-scroll">
+                                <div class="mb-4">
+                                    <i class="fas fa-heart fa-3x text-secondary"></i>
+                                </div>
+                                <h5 class="fw-bold">Our Values</h5>
+                                <p class="text-muted">
+                                    Honesty, creativity, and positivity are at the heart of everything we do, ensuring every piece of content resonates with your journey.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End About -->
+            </div>
+        <!-- End Content Lima -->
+
+
+
+
+        
+        <!-- Start Footer -->
+          <footer class="footer bg-dark text-light position-relative py-5">
+            <div class="container text-center">
+                <h5 class="mb-3">Follow Us</h5>
+                <div class="social-icons mb-3">
+                    <a href="#" class="text-light me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
+                        <i class="fab fa-facebook fa-2x social-icon"></i>
+                    </a>
+                    <a href="#" class="text-light me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter">
+                        <i class="fab fa-twitter fa-2x social-icon"></i>
+                    </a>
+                    <a href="#" class="text-light me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram">
+                        <i class="fab fa-instagram fa-2x social-icon"></i>
+                    </a>
+                    <a href="#" class="text-light" data-bs-toggle="tooltip" data-bs-placement="top" title="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x social-icon"></i>
+                    </a>
+                </div>
+                <p class="mb-0">© 2024 EgaaTheFarmer. All Rights Reserved.</p>
+            </div>
+
+            <!-- Start SVG Wave Animation -->
+            <div class="wave-container position-absolute w-100 bottom-0">
+                <svg class="wave wave1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#343a40" fill-opacity="1" d="M0,160L30,160C60,160,120,160,180,176C240,192,300,224,360,234.7C420,245,480,235,540,213.3C600,192,660,160,720,160C780,160,840,192,900,218.7C960,245,1020,267,1080,245.3C1140,224,1200,160,1260,160C1320,160,1380,224,1410,256L1440,288L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                    </path>
+                </svg>
+                <svg class="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#495057" fill-opacity="0.8" d="M0,140L30,140C60,140,120,140,180,156C240,172,300,204,360,214.7C420,225,480,215,540,193.3C600,172,660,140,720,140C780,140,840,172,900,198.7C960,225,1020,247,1080,225.3C1140,204,1200,140,1260,140C1320,140,1380,204,1410,236L1440,268L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                    </path>
+                </svg>
+                <svg class="wave wave3" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#6c757d" fill-opacity="0.6" d="M0,180L30,180C60,180,120,180,180,196C240,212,300,244,360,254.7C420,265,480,255,540,233.3C600,212,660,180,720,180C780,180,840,212,900,238.7C960,265,1020,287,1080,265.3C1140,244,1200,180,1260,180C1320,180,1380,244,1410,276L1440,308L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                    </path>
+                </svg>
+                <svg class="wave wave4" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#868e96" fill-opacity="0.4" d="M0,200L30,200C60,200,120,200,180,216C240,232,300,264,360,274.7C420,285,480,275,540,253.3C600,232,660,200,720,200C780,200,840,232,900,258.7C960,285,1020,307,1080,285.3C1140,264,1200,200,1260,200C1320,200,1380,264,1410,296L1440,328L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                    </path>
+                </svg>
+                <svg class="wave wave5" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#adb5bd" fill-opacity="0.3" d="M0,220L30,220C60,220,120,220,180,236C240,252,300,284,360,294.7C420,305,480,295,540,273.3C600,252,660,220,720,220C780,220,840,252,900,278.7C960,305,1020,327,1080,305.3C1140,284,1200,220,1260,220C1320,220,1380,284,1410,316L1440,348L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                    </path>
+                </svg>
+            </div>
+            <!-- End SVG Wave Animation -->
+          </footer>
+        <!-- End Footer -->
+
+
+
+
+
+
+
+      <!-- Start JavaScript  -->
+          <script>
+
+            // Start Fungsi untuk ganti Tema
+              function toggleTheme() {
+                const theme = document.documentElement.getAttribute("data-theme");
+                const themeIcon = document.getElementById("themeToggleIcon").querySelector("i");
+            
+                if (theme === "dark") {
+                    document.documentElement.setAttribute("data-theme", "light");
+                    localStorage.setItem("theme", "light");
+                    themeIcon.classList.remove("bi-moon");
+                    themeIcon.classList.add("bi-lightbulb-fill");  // Ubah ke ikon light
+                } else {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    localStorage.setItem("theme", "dark");
+                    themeIcon.classList.remove("bi-lightbulb-fill");
+                    themeIcon.classList.add("bi-moon");  // Ubah ke ikon dark
+              }
+            };
+            // Cek tema yang tersimpan saat halaman dimuat
+
+              document.addEventListener("DOMContentLoaded", () => {
+                const savedTheme = localStorage.getItem("theme") || "light";
+                document.documentElement.setAttribute("data-theme", savedTheme);
+                const themeIcon = document.getElementById("themeToggleIcon").querySelector("i");
+                  if (savedTheme === "dark") {
+                      themeIcon.classList.add("bi-moon");  // Ikon mode gelap
+                  } else {
+                      themeIcon.classList.add("bi-lightbulb-fill");  // Ikon mode terang
+                  }
+              }
+            );
+            // End Fungsi untuk Ganti Tema
+
+
+            // Start Fungsi Hitung Kebutuhan Kalori Harian
+                document.getElementById('calorieForm').addEventListener('submit', function(e) {
+                  e.preventDefault(); // Mencegah form dari submit default
+
+                  // Mengambil nilai input
+                  const gender = document.getElementById('gender').value;
+                  const age = parseInt(document.getElementById('age').value);
+                  const weight = parseFloat(document.getElementById('weight').value);
+                  const height = parseFloat(document.getElementById('height').value) / 100; // Mengubah cm ke meter
+                  const activityLevel = parseFloat(document.getElementById('activityLevel').value);
+
+                  // Menghitung Kebutuhan Kalori Harian (KKB)
+                  let bmr;
+                  if (gender === 'male') {
+                      bmr = 10 * weight + 6.25 * (height * 100) - 5 * age + 5; // Rumus BMR pria
+                  } else {
+                      bmr = 10 * weight + 6.25 * (height * 100) - 5 * age - 161; // Rumus BMR wanita
+                  }
+                  const calorieNeed = bmr * activityLevel;
+
+                  // Menghitung BMI
+                  const bmi = weight / (height * height); // Rumus BMI
+                  let bmiStatus = '';
+                  let bmiColor = '';
+
+                  // Menentukan status berat badan
+                  if (bmi < 18.5) {
+                      bmiStatus = 'Underweight';
+                      bmiColor = 'blue';
+                  } else if (bmi >= 18.5 && bmi < 24.9) {
+                      bmiStatus = 'Ideal Body Weight';
+                      bmiColor = 'green';
+                  } else if (bmi >= 25 && bmi < 29.9) {
+                      bmiStatus = 'Overweight';
+                      bmiColor = 'orange';
+                  } else {
+                      bmiStatus = 'Obesity';
+                      bmiColor = 'red';
+                  }
+
+                  // Menampilkan hasil
+                  document.getElementById('result').innerText = `Daily Calorie Requirements: ${Math.round(calorieNeed)} calorie`;
+                  const bmiResultElement = document.getElementById('bmiResult');
+                  bmiResultElement.innerText = `Status BMI: ${bmiStatus} (BMI: ${bmi.toFixed(2)})`;
+                  bmiResultElement.style.color = bmiColor;
+              });
+            // End Fungsui Hitung Kebutuhan Kalori Harian
+
+            // Start Fungsi Scroll
+            document.addEventListener("DOMContentLoaded", function() {
+                  const scrollElements = document.querySelectorAll(".animate-on-scroll");
+              
+                  const elementInView = (el) => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    return (
+                      elementTop <= (window.innerHeight || document.documentElement.clientHeight)
+                    );
+                  };
+              
+                  const displayScrollElement = (element) => {
+                    element.classList.add("animate-visible");
+                  };
+              
+                  const handleScrollAnimation = () => {
+                    scrollElements.forEach((el) => {
+                      if (elementInView(el)) {
+                        displayScrollElement(el);
+                      }
+                    });
+                  };
+              
+                  window.addEventListener("scroll", () => {
+                    handleScrollAnimation();
+                  });
+                });
+            // End Fungsi Scroll
+
+            // Start Fungsi Modal
+            function showModal() {
+                // Ambil data dari form
+                document.getElementById('modalFirstName').textContent = document.getElementById('firstName').value;
+                document.getElementById('modalLastName').textContent = document.getElementById('lastName').value;
+                document.getElementById('modalGender').textContent = document.getElementById('gender').value;
+                document.getElementById('modalAge').textContent = document.getElementById('age').value;
+                document.getElementById('modalFrom').textContent = document.getElementById('from').value;
+                document.getElementById('modalEmail').textContent = document.getElementById('email').value;
+
+                // Tampilkan modal
+                var subscribeModal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+                subscribeModal.show();
+            }
+
+            function submitSubscription() {
+                alert("Thank you for subscribing!");
+                document.getElementById('subscribeForm').reset(); // Reset form setelah subscribe
+                var subscribeModal = bootstrap.Modal.getInstance(document.getElementById('subscribeModal'));
+                subscribeModal.hide();
+            }
+
+            // End Fungsi Modal
+
+            // Start Footer
+              // Initialize Bootstrap tooltips
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            // End Footer
+                </script>
+        <!-- End JavaScript -->
+    
+      
+  </body>
+<!-- End Body -->
+</html>
